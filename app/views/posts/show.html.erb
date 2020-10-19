@@ -1,0 +1,21 @@
+<h2>Recent Posts</h2>
+
+
+  <div class="post">
+
+    <div class="username">
+    <%= @post.user.name %>
+    </div>
+    <div class="title">
+      <p><%= @post.title %></p>
+    </div>
+
+    <div class="description">
+    <p><%= @post.discription %></p>
+    </div>
+    <div class="snippet">
+       <p><%= @post.codesnippet %></p>
+    </div>
+    <%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Edit Post', edit_post_path(@post), method: :get %>
+  </div>

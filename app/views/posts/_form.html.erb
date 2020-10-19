@@ -1,0 +1,13 @@
+<%= form_for @post do |p| %>
+<%= p.label :title %>
+<%= p.text_field :title, :placeholder => 'Programming language' %>
+
+<%= p.label :discription %>
+<%= p.text_field :discription, :placeholder => 'discribe the problem you have here: ' %>
+
+<%= p.label :codesnippet %>
+<%= p.text_field :codesnippet, :placeholder => 'enter your code here' %>
+
+<%= submit_tag "Lodge post" %>
+
+<% end %>

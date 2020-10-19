@@ -1,0 +1,21 @@
+<h1>Feed</h1>
+<%# user.post ea %>
+<% @posts.each do |post| %>
+  <div class="post">
+
+    <div class="username">
+    <%= post.user.name %>
+    </div>
+    <div class="title">
+      <p><%= post.title %></p>
+    </div>
+
+    <div class="description">
+    <p><%= post.discription %></p>
+    </div>
+    <div class="snippet">
+       <p><%= post.codesnippet %></p>
+    </div>
+  </div>
+
+<% end %>
