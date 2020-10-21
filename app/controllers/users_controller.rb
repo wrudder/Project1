@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    @groups = Group.all
+  end
   def new
     @user = User.new
 
@@ -41,7 +45,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :name, :image, :post_id)
+    params.require(:user).permit(:email, :password, :password_confirmation, :name, :image, :post_id, :group_ids => [])
   end
 
 

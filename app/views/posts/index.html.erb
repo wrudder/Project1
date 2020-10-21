@@ -1,21 +1,46 @@
-<h1>Feed</h1>
-<%# user.post ea %>
+<h1 class="recentposts">Recent Posts</h1>
+
+
+
 <% @posts.each do |post| %>
+<div class="container postfeed">
   <div class="post">
 
     <div class="username">
     <%= post.user.name %>
     </div>
     <div class="title">
-      <p><%= post.title %></p>
+      <p>Title: <%= post.title %></p>
     </div>
 
     <div class="description">
-    <p><%= post.discription %></p>
+      <p>Discription: <%= post.discription %></p>
     </div>
-    <div class="snippet">
-       <p><%= post.codesnippet %></p>
+    <div>
+      <p>Code Snippet:</p>
+      <p class="snippet"><%==CodeRay.scan(post.codesnippet, :ruby).div %></p>
+    </div>
+    <hr>
+<% post.replies.each do |r| %>
+<p class="comment"><%= r.user.name%>:</p>
+  <p><%= r.reply %></p>
+  <%= link_to 'Delete Comment', r, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <hr>
+
+<% end %>
+    <div class="reply">
+  <%= form_for Reply.new do |f| %>
+    <%= f.text_field :reply %>
+
+    <%= f.submit 'Comment', :class => "btn btn-raised btn-secondary"%>
+  <%= hidden_field_tag :post_id, post.id %>
+  <hr>
+
+<%# <%= render @replies %>
+
+  <% end %>
+
     </div>
   </div>
-
+</div>
 <% end %>

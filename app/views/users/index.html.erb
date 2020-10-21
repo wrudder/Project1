@@ -1,0 +1,13 @@
+<h2>All Users</h2>
+
+<% @users.each do |user| %>
+<p><%= user.email %></p>
+<p>Currently belongs to: <%= user.group_ids%></p>
+<th>groups: </th>
+<div class="field">
+  <%= form_for user do |f| %>
+  <%= collection_check_boxes(:user, :group_ids, @groups, :id, :title) %>
+  <%= f.submit %>
+<% end %>
+</div>
+<% end %>

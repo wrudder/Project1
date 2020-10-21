@@ -1,13 +1,22 @@
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
 <%= form_for @post do |p| %>
 <%= p.label :title %>
-<%= p.text_field :title, :placeholder => 'Programming language' %>
+<%= p.text_field :title, :placeholder => 'Programming language', :class => "form-control" %>
 
 <%= p.label :discription %>
-<%= p.text_field :discription, :placeholder => 'discribe the problem you have here: ' %>
+<%= p.text_field :discription, :placeholder => 'discribe the problem you have: ', :class => "form-control" %>
 
-<%= p.label :codesnippet %>
-<%= p.text_field :codesnippet, :placeholder => 'enter your code here' %>
+<div class="input-group">
+  <div class="input-group-prepend">
+<%= p.label :codesnippet, "Codesnippet:" %>
+ <%= p.text_area :codesnippet, :placeholder => 'enter your code here', :class=>"form-control" %>
 
-<%= submit_tag "Lodge post" %>
+<%= p.submit %>
 
 <% end %>
+
+</div>
+
+</div>

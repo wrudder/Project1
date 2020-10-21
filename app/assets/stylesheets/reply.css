@@ -1,0 +1,19 @@
+.comment {
+  display: inline-block;
+}
+
+.postfeed {
+  border: 2px solid #c5d9f1;
+  border-radius: 0.2em;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.post {
+  padding: 20px;
+
+}
+
+.recentposts {
+  margin-top: 20px;
+}

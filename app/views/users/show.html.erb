@@ -1,10 +1,13 @@
-<h2>My details:</h2>
-<%= @user.name %>
-  <%= link_to 'Edit or add Profile informaiton', edit_user_path %>
 
+<div class="row">
+  <div class="col-md-4">
+    <h2>My details:</h2>
+      <p>Username: <%= @user.name %></p>
+      <%= link_to 'Edit or add Profile informaiton', edit_user_path %>
+  </div>
+<div class="col-md-8">
 <h2>My posts: </h2>
 <% @posts.each do |post| %>
-  <div class="post">
 
     <div class="username">
 
@@ -17,9 +20,12 @@
     <p><%= post.discription %></p>
     </div>
     <div class="snippet">
-       <code><pre><%= CodeRay.scan(post.codesnippet, :HTML).div %></pre></code>
+      <%= post.codesnippet %>
   </div>
   <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   <%= link_to 'view Post', post_path(post), method: :get %>
   <%# <%= link_to 'Edit Post', edit_user, method: :update %>
+  <hr>
 <% end %>
+</div>
+</div>
