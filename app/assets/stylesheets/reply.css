@@ -17,3 +17,13 @@
 .recentposts {
   margin-top: 20px;
 }
+
+.comment {
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+.response {
+  margin-left: 35px;
+  color: grey;
+}

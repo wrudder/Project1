@@ -1,7 +1,18 @@
-<h1>Channels</h1>
+<h1 class="channels">Channels</h1>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Join a Channel: </h3>
 
-<% @groups.each do |group| %>
-<p><%= group.title %></p>
-<%= link_to 'Manage Users', users_path %>
-<%= link_to 'Delete group', group, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+    <%= link_to 'New Channels', new_group_path %>
+  </div>
+  <div class="col-md-8">
+<h3>Established Channels:</h3>
+  <% @groups.each do |group| %>
+
+    <p><%= group.title %></p>
+    <%= link_to 'Manage Users', users_path %>
+    <%= link_to 'Delete group', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  </div>
+
+</div>

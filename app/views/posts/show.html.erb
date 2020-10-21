@@ -14,8 +14,24 @@
     <p><%= @post.discription %></p>
     </div>
     <div class="snippet">
-       <p><%= @post.codesnippet %></p>
+       <p><%==CodeRay.scan(@post.codesnippet, :ruby).div %></p>
     </div>
+  <hr>
+    <% @post.replies.each do |r| %>
+    <div class="comment">
+    <p><%= r.user.name%>:</p>
+      <p class ="response"><%= r.reply %></p>
+      <%= link_to 'Delete Comment', r, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+      <hr>
+
+        <% end %>
+
+
+
+
+
+
     <%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Edit Post', edit_post_path(@post), method: :get %>
   </div>

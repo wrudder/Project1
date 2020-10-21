@@ -1,16 +1,18 @@
 class PostsController < ApplicationController
-# before_action :check_for_login
+  # before_action :check_for_login
 
 
   def index
       @posts = Post.all.order('created_at desc')
       @groups = Group.all.order('created_at')
 
+
   end
 
   def show
     @post = Post.find params[:id]
   end
+
 
   def create
 
@@ -45,7 +47,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :discription, :codesnippet, :user_id)
+      params.require(:post).permit(:title, :discription, :codesnippet, :user_id, :group_id)
     end
 
   def check_for_login

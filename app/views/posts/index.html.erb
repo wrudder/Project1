@@ -1,16 +1,37 @@
-<h1 class="recentposts">Recent Posts</h1>
 
 
 
+
+<div class="row">
+  <div class="col-md-2 info">
+    <h3 class ="channelinfo">Channel: </h3>
+
+      <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Channels
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="#">Dropdown link</a>
+            <a class="dropdown-item" href="#">Dropdown link</a>
+          </div>
+        </div>
+          <button type="button" class="btn btn-secondary">
+          <%= link_to("Create Post", new_post_path, class: "btn btn-secondary")%></button>
+    </div>
+    </div>
+
+  <div class="col-md-10">
+    <h1 class="recentposts">Recent Posts</h1>
 <% @posts.each do |post| %>
 <div class="container postfeed">
   <div class="post">
 
     <div class="username">
-    <%= post.user.name %>
+    <p>By: <%= post.user.name %></p>
     </div>
     <div class="title">
-      <p>Title: <%= post.title %></p>
+      <h4><%= post.title %></h4>
     </div>
 
     <div class="description">
@@ -22,25 +43,30 @@
     </div>
     <hr>
 <% post.replies.each do |r| %>
-<p class="comment"><%= r.user.name%>:</p>
-  <p><%= r.reply %></p>
+<div class="comment">
+<p><%= r.user.name%>:</p>
+  <p class ="response"><%= r.reply %></p>
   <%= link_to 'Delete Comment', r, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
   <hr>
 
-<% end %>
+    <% end %>
     <div class="reply">
   <%= form_for Reply.new do |f| %>
-    <%= f.text_field :reply %>
 
-    <%= f.submit 'Comment', :class => "btn btn-raised btn-secondary"%>
+    <%= f.text_field :reply, :class => "form-control" %>
+
+    <%= f.submit 'Comment', :class => "btn btn-raised btn-secondary commentbutton"%>
   <%= hidden_field_tag :post_id, post.id %>
-  <hr>
+
 
 <%# <%= render @replies %>
 
-  <% end %>
+    <% end %>
 
+      </div>
     </div>
   </div>
+    <% end %>
+  </div>
 </div>
-<% end %>

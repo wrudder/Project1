@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
       redirect_to groups_path
       flash[:error] = "Group was deleted."
     end
-    
+
   private
   def group_params
     params.require(:group).permit(:title, :user_ids => [])

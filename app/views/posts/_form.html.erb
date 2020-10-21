@@ -1,22 +1,19 @@
-<div class="input-group mb-3">
-
-  <div class="input-group-prepend">
+  <div class="form-group">
 <%= form_for @post do |p| %>
 <%= p.label :title %>
-<%= p.text_field :title, :placeholder => 'Programming language', :class => "form-control" %>
+<%= p.text_field :title, :placeholder => 'Title', :class => "form-control" %>
 
 <%= p.label :discription %>
 <%= p.text_field :discription, :placeholder => 'discribe the problem you have: ', :class => "form-control" %>
 
 <div class="input-group">
   <div class="input-group-prepend">
-<%= p.label :codesnippet, "Codesnippet:" %>
- <%= p.text_area :codesnippet, :placeholder => 'enter your code here', :class=>"form-control" %>
-
-<%= p.submit %>
-
-<% end %>
-
+    <p><%= p.label :codesnippet, "Codesnippet:", class: 'codesnippetlabel' %></p>
+     <div class="snippy"><%= p.text_area :codesnippet, :placeholder => 'enter your code here', class: 'codeinput' %></div>
+</div>
 </div>
 
-</div>
+  <%= p.submit class: "btn btn-primary" %>
+
+  <% end %>
+    </div>

@@ -3,6 +3,8 @@
   <div class="col-md-4">
     <h2>My details:</h2>
       <p>Username: <%= @user.name %></p>
+      <p>Email: <%= @user.email %></p>
+    
       <%= link_to 'Edit or add Profile informaiton', edit_user_path %>
   </div>
 <div class="col-md-8">
@@ -20,9 +22,8 @@
     <p><%= post.discription %></p>
     </div>
     <div class="snippet">
-      <%= post.codesnippet %>
+    <%==CodeRay.scan(post.codesnippet, :ruby).div %>
   </div>
-  <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   <%= link_to 'view Post', post_path(post), method: :get %>
   <%# <%= link_to 'Edit Post', edit_user, method: :update %>
   <hr>

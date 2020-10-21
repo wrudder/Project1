@@ -7,6 +7,27 @@
 <%= f.file_field :image %>
 
 <%= f.submit "Update info" %>
+<% post.replies.each do |r| %>
+<div class="comment">
+<p><%= r.user.name%>:</p>
+  <p class ="response"><%= r.reply %></p>
+  <%= link_to 'Delete Comment', r, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <hr>
 
+    <% end %>
+    <div class="reply">
+  <%= form_for Reply.new do |f| %>
+    <%= f.text_field :reply %>
+
+    <%= f.submit 'Comment', :class => "btn btn-raised btn-secondary"%>
+  <%= hidden_field_tag :post_id, post.id %>
+
+
+<%# <%= render @replies %>
+
+    <% end %>
+
+      </div>
 
 <% end %>

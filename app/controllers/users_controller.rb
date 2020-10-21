@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_action :check_for_admin, :only => [:index]
 
   def index
     @users = User.all
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
   @user = User.new user_params
   if @user.save #if this worked
     session[:user_id] = @user.id
-    redirect_to root_path
+    redirect_to group_path(@user.id)
     else
       render :new
     end

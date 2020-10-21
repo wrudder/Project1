@@ -10,11 +10,16 @@
   </head>
 
   <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Snippet</a>
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+  <a class="navbar-brand mx-auto" href="#">Snippet</a>
+  </div>
+</nav>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -31,13 +36,17 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
             <div class="dropdown-menu">
             <%= link_to "My Account", user_path(@current_user) %>
-          <a class="dropdown-item"><%= link_to "logout #{@current_user.email}", login_path, :method => 'delete' %> </a>
+          <a class="dropdown-item"><%= link_to "logout -  #{@current_user.name}", login_path, :method => 'delete' %> </a>
           <a class="dropdown-item"><%= link_to "Create Post", new_post_path, :method => 'get' %></a>
             </div>
       </li>
           <% else %>
-      <li class="nav-item"><%= link_to 'Sign up', new_user_path %></li>
-        <li class="nav-item"><%= link_to 'Login', login_path %></li>
+        <li class="nav-item">
+            <a class="nav-link"<%= link_to 'Sign up', new_user_path %>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"<%= link_to 'Login', login_path %>
+        </li>
         <% end %>
     </ul>
 
