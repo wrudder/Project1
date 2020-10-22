@@ -11,7 +11,15 @@ class GroupsController < ApplicationController
   def show
 
     @groups = Group.all
+    @group = Group.find params[:id]
+    @users = User.all
 
+  end
+
+  def update
+    group = Group.find params[:id]
+    group.update group_params
+    redirect_to groups_path
   end
 
   def new

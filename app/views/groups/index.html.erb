@@ -10,19 +10,24 @@
   </div>
 
   <div class="col-md-12 mychannels">
-<h3 class ="mychannels">My Channels:</h3>
+<h3 class ="mychannels">Join a Channel:</h3>
 
 
   <% @groups.each do |group| %>
-    <p><%= group.title %></p>
+    <%# <!-- <p><%= group.title %>
     <% if @current_user.admin? %>
     <%= link_to 'Manage Users', users_path %>
     <%= link_to 'Delete group', group, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% else %>
+    <%= form_for group do |f| %>
+    <%= collection_check_boxes(:group, :user_ids, @groups, :id, :title) %>
+    <%= f.submit %>
+    <% end %>
     <%= link_to 'View posts', posts_path %>
-
       <% end %>
     <% end %>
+
+
   </div>
 
 </div>

@@ -18,7 +18,7 @@ before_action :check_for_admin, :only => [:index]
   @user = User.new user_params
   if @user.save #if this worked
     session[:user_id] = @user.id
-    redirect_to group_path(@user.id)
+    redirect_to groups_path
     else
       render :new
     end
