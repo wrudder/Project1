@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
       post = Post.new post_params
       @current_user.posts << post
+      @current_user.groups.last.posts << post
       redirect_to posts_path
     end
 
