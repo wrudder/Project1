@@ -5,9 +5,13 @@ before_action :check_for_admin, :only => [:index]
     @users = User.all
     @groups = Group.all
   end
-  def new
-    @user = User.new
 
+  def new
+    if @current_user.present?
+      redirect_to root_path
+    else
+    @user = User.new
+    end
   end
 
   def create
@@ -48,6 +52,5 @@ before_action :check_for_admin, :only => [:index]
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :name, :image, :post_id, :group_ids => [])
   end
-
 
 end

@@ -17,7 +17,9 @@
     <%= f.password_field :password, :class => "form-control" %>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, :class => "form-control" %>
-    <%= f.submit "Sign up!", :class => "btn btn-primary"%>
-    <% end %>
+    <%= f.submit "Sign up!", :class => "btn btn-primary "%>
 
+    <% end %>
+<div class="alreadyownaccount"><%= link_to "Already have an account?", login_path %>
+  </div>
   </div>

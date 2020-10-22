@@ -12,7 +12,7 @@ class RepliesController < ApplicationController
     post = Post.find(params[:post_id])
     post.replies << reply
     @current_user.replies << reply
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   def show
@@ -29,14 +29,14 @@ class RepliesController < ApplicationController
   def destroy
     @reply = Reply.find(params[:id])
     @reply.destroy
-    redirect_to root_path
+    redirect_to posts_path
     flash[:error] = "Post was destroyed!"
   end
 
 
   private
   def reply_params
-    params.require(:reply).permit(:reply, :post_id, :user_id, :user_name)
+    params.require(:reply).permit(:reply, :codereply, :post_id, :user_id, :user_name)
   end
 
 

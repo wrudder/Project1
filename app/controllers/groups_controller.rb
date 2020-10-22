@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :check_for_login
 
 
   def index
@@ -10,7 +11,7 @@ class GroupsController < ApplicationController
   def show
 
     @groups = Group.all
-    
+
   end
 
   def new

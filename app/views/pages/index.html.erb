@@ -1,0 +1,63 @@
+
+    <div class="row logo1">
+
+      <div class="span4"><img class="logo" src="<%= asset_path('snippetlogo.png') %>" /></div>
+
+    </div>
+
+
+<div class="col-xs-1" align="center">
+    <h2>We <3 people who code</h2>
+
+<h4 class ="motto">For Students, by Developers</h4>
+<p>Snippet is a collaborative code sharing platform for anyone that codes. We help you get answers to your toughest coding questions and encourage knowledge sharing with peers.</p>
+</div>
+
+
+<div class="card-deck mb-3 text-center steps">
+  <div class="card mb-4 box-shadow signuphome">
+    <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Step-1</h4>
+          </div>
+          <div class="card-body">
+                    <h1 class="card-title pricing-card-title">Sign-up!</h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>It's all Free!</li>
+                      <li>Email support</li>
+                      <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary homebuttons"><%= link_to("Sign up for free", new_user_path)%></button>
+                  </div>
+  </div>
+  <div class="card mb-4 box-shadow channelhome">
+    <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Step-2</h4>
+          </div>
+
+          <div class="card-body">
+                    <h1 class="card-title pricing-card-title">Find Channel</h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Collabortate with class mates</li>
+                      <li>Help others progress</li>
+                      <li>As many channels as you like</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary"><%= link_to("Find Channel", groups_path)%></button>
+                  </div>
+  </div>
+  <div class="card mb-4 box-shadow">
+    <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Step-3</h4>
+          </div>
+          <div class="card-body">
+                    <h1 class="card-title pricing-card-title">Create a Post</h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Share your code</li>
+                      <li>Recieve feedback from peers</li>
+                      <li>Profit!</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary"><%= link_to("Create Post", new_post_path)%></button>
+                  </div>
+  </div>
+</div>
+
+<hr>

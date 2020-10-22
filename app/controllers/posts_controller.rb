@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     # FIND THE GROUP ID CONNECTED TO THE POSTS
+
       @posts = @current_user.group_posts.order('created_at desc')
       @groups = Group.all.order('created_at')
 

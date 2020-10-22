@@ -1,8 +1,16 @@
 <h1 class="channels">Channels</h1>
 <div class="row">
 
-  <div class="col-md-4">
-<h3>My Channels:</h3>
+  <div class="col-md-12">
+    <h3 class="findchannel">Find a Channel: </h3>
+
+    <div class="md-form mt-0">
+  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  </div>
+  </div>
+
+  <div class="col-md-12 mychannels">
+<h3 class ="mychannels">My Channels:</h3>
 
 
   <% @groups.each do |group| %>
@@ -16,11 +24,5 @@
       <% end %>
     <% end %>
   </div>
-  <div class="col-md-4">
-    <h3>Find a Channel: </h3>
 
-    <div class="md-form mt-0">
-  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-</div>
-  </div>
 </div>
