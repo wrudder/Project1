@@ -1,0 +1,5 @@
+
+<% form_for @groups do |group| %>
+  <p><%= group.title %></p>
+    <%= hidden_field_tag :user_id, user.id %>
+  <% end %>

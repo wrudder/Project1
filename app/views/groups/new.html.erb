@@ -1,5 +1,13 @@
+
+<div class="columns is-centered">
+
+
 <%= form_for @group do |p| %>
-<%= p.label :title %>
-<%= p.text_field :title, :placeholder => 'sei38-cohort' %>
-<%= p.submit "Create Group" %>
+<div class="row">
+               <div class="col-sm-10 offset-sm-1 text-center">
+                   <h3 class="display-4 createchannelheader">Create Channel</h3>
+
+<%= p.text_field :title, :placeholder => 'sei38-cohort', :class => 'form-control inputchannel' %>
+<%= p.submit "Create Group", :class => 'btn btn-success' %>
 <% end %>
+</div>

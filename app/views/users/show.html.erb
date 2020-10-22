@@ -1,14 +1,14 @@
 
 <div class="row">
   <div class="col-md-4">
-    <h2>My details:</h2>
+    <h2 class="userinfo">My details:</h2>
       <p>Username: <%= @user.name %></p>
       <p>Email: <%= @user.email %></p>
 
       <%= link_to 'Edit or add Profile informaiton', edit_user_path %>
   </div>
 <div class="col-md-8">
-<h2>My posts: </h2>
+<h2 class="userinfo">My posts: </h2>
 <% @posts.each do |post| %>
 
     <div class="username">

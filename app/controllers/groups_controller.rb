@@ -10,6 +10,7 @@ class GroupsController < ApplicationController
   def show
 
     @groups = Group.all
+    
   end
 
   def new

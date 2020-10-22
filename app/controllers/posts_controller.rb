@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
-  # before_action :check_for_login
+  before_action :check_for_login
 
 
   def index
-      @posts = Post.all.order('created_at desc')
+    # FIND THE GROUP ID CONNECTED TO THE POSTS
+      @posts = @current_user.group_posts.order('created_at desc')
       @groups = Group.all.order('created_at')
 
 
@@ -49,8 +50,4 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :discription, :codesnippet, :user_id, :group_id)
     end
-
-  def check_for_login
-  redirect_to login_path unless @curent_user.present?
-  end
 end
