@@ -1,9 +1,7 @@
-
-
-
 <div class="row">
 
-  <div class="col-md-12">
+
+  <div class="col-md-11">
     <h1 class="recentposts">Recent Posts</h1>
 <% @posts.each do |post| %>
 <div class="container postfeed">
@@ -51,5 +49,15 @@
     </div>
   </div>
     <% end %>
+  </div>
+
+  <div class="col-md-1">
+    <div class="dropdow"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Peers</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% @users.each do |user| %>
+    <p class ="dropdown-item"><%= user.name %></p>
+    <% end %>
+        </div>
+    </div>
   </div>
 </div>

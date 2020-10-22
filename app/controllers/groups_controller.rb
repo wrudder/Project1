@@ -35,7 +35,7 @@ class GroupsController < ApplicationController
     def join
         @current_user.group_ids = params[:group][:group_ids]
         @current_user.save
-        redirect_to groups_path
+        redirect_to posts_path
     end
 
     def update

@@ -6,4 +6,14 @@ This project is to showcase the use of CRUD systems using Ruby Rails.
 
 ####Databases
 
-I Have 4 models for my project
+My core databases include:
+- Groups
+- Users
+- Posts
+
+####Users 
+- log in with bcrypt
+
+####Styling with bootstrap
+- Navbar with dropdown menus
+- Styled views and forms.
