@@ -26,7 +26,7 @@ before_action :check_for_admin, :only => [:index]
 
   def show
   @user = User.find(params[:id])
-  @posts = @user.posts
+  @posts = @user.posts.order('created_at desc')
   end
 
   def edit

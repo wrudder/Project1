@@ -13,19 +13,19 @@
     <p>By: <%= post.user.name %></p>
     </div>
     <div class="title">
-      <h4><%= post.title %></h4>
+      <strong><h4><%= post.title %></h4></strong>
     </div>
 
     <div class="description">
-      <p>Discription: <%= post.discription %></p>
+      <p class ="disc"><%= post.discription %></p>
     </div>
     <div>
-      <p>Code Snippet:</p>
       <p class="snippet"><%==CodeRay.scan(post.codesnippet, :ruby).div %></p>
     </div>
     <hr>
 <% post.replies.each do |r| %>
 <div class="comment">
+  <p>Answers: </p>
 <p><%= r.user.name%>:</p>
   <p class ="response"><%=r.reply %></p>
   <p class ="response"><%==CodeRay.scan(r.codereply, :ruby).div %></p>

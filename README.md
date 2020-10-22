@@ -1,24 +1,9 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Project-01
+###By Will Rudder
 
-Things you may want to cover:
+This project is to showcase the use of CRUD systems using Ruby Rails.
 
-* Ruby version
+####Databases
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I Have 4 models for my project

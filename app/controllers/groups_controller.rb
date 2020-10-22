@@ -16,11 +16,7 @@ class GroupsController < ApplicationController
 
   end
 
-  def update
-    group = Group.find params[:id]
-    group.update group_params
-    redirect_to groups_path
-  end
+
 
   def new
     @group = Group.new
@@ -34,6 +30,18 @@ class GroupsController < ApplicationController
       else
         render :new
       end
+    end
+
+    def join
+        @current_user.group_ids = params[:group][:group_ids]
+        @current_user.save
+        redirect_to groups_path
+    end
+
+    def update
+      group = Group.find (params[:id])
+      group.update group_params
+      redirect_to groups_path
     end
 
     def destroy

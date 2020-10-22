@@ -39,7 +39,7 @@
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
             <div class="dropdown-menu">
             <%= link_to "My Account", user_path(@current_user) %>
-          <a class="dropdown-item"><%= link_to "logout -  #{@current_user.name}", login_path, :method => 'delete' %> </a>
+          <a class="dropdown-item"><%= link_to "logout   #{@current_user.name}", login_path, :method => 'delete' %> </a>
           <a class="dropdown-item"><%= link_to "Create Post", new_post_path, :method => 'get' %></a>
             </div>
       </li>

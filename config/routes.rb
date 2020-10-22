@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
   resources :groups
+  post "/groups/join" => 'groups#join'
+
 end
