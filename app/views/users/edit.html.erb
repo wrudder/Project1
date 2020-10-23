@@ -1,12 +1,14 @@
-<h2>Edit Details</h2>
 
+<div class="form-group editdetails">
+  <h2>Edit Details</h2>
 <%= form_for @user do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.text_field :name, :class => "form-control nameeditfield" %>
 <%= f.label :image %>
 <%= f.file_field :image %>
 
-<%= f.submit "Update info" %>
+<%= f.submit "Update Info", :class => "btn btn-primary updateinfo " %>
 
 
 <% end %>
+</div>
